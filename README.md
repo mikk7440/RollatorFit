@@ -1,2 +1,5 @@
 # RollatorFit
-Mobility aid and evaluator .Net Core app
+Mobility aid evaluator 
+
+ASP.Net Core app
+Auth enabled in app storage
