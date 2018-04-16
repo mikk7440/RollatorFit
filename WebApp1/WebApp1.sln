@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp1", "WebApp1\WebApp1.csproj", "{F10BD683-1F81-428E-A3CE-89251CEFFF52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp1", "WebApp1\WebApp1.csproj", "{F10BD683-1F81-428E-A3CE-89251CEFFF52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCapp4Rollator", "MVCapp4Rollator\MVCapp4Rollator.csproj", "{21081BEE-C222-4BDE-BD10-9E0F8F7BA4DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F10BD683-1F81-428E-A3CE-89251CEFFF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F10BD683-1F81-428E-A3CE-89251CEFFF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F10BD683-1F81-428E-A3CE-89251CEFFF52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21081BEE-C222-4BDE-BD10-9E0F8F7BA4DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21081BEE-C222-4BDE-BD10-9E0F8F7BA4DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21081BEE-C222-4BDE-BD10-9E0F8F7BA4DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21081BEE-C222-4BDE-BD10-9E0F8F7BA4DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
