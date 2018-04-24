@@ -10,4 +10,7 @@ namespace MVCapp4Rollator.Models
     public class ApplicationUser : IdentityUser
     {
     }
+
+
+
 }

@@ -27,14 +27,19 @@ namespace MVCapp4Rollator.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "The Intellegient walker";
+        
+            var viewModel = new AboutModel()
+            {
+                Title = "The Intellegient walker",
+                Text = " Some text."
+            };
 
-            return View();
+            return View(viewModel);
         }
 
-        public IActionResult Contact()
+        public IActionResult Gallery()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Your Gallery page.";
 
             return View();
         }

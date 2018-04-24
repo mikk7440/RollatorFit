@@ -1,11 +1,16 @@
-﻿@{
+﻿@model MVCapp4Rollator.Models.AboutModel
+
+@{
     ViewData["Title"] = "About";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<p>A walker able to fit the users ever changing needs, by analysing gait.\n Inteli-walker is designed for:</p>
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Title</h3>
+
+<p>@Model.Text</p>
+
+@*<p>A walker able to fit the users ever changing needs, by analysing gait.\n Inteli-walker is designed for:</p>
 <li> Help you stay as mobile as possible. </li>
 <li> Reduce falls and improve independence. </li>
-<li> Safely manouvver in and outside your home.</li>
+<li> Safely manouvver in and outside your home.</li>*@
 
