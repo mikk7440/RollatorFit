@@ -14,7 +14,8 @@ using MVCapp4Rollator.Services;
 
 namespace MVCapp4Rollator
 {
-    public class Startup
+    // Kørt når app starter.
+    public class Startup 
     {
         public Startup(IConfiguration configuration)
         {
@@ -23,8 +24,8 @@ namespace MVCapp4Rollator
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        // Tilføj services til IserviceCollection..
+        public void ConfigureServices(IServiceCollection services) 
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -33,31 +34,32 @@ namespace MVCapp4Rollator
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
-            services.AddMvc();
+            services.AddMvc();                                       // tilføj Model View Controller
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // Configurer HTTP request pipeline.
+        // IApplicationBuilder = En klasse der giver mulighed for at ændre i "Request pipelinen"
+        // IHostingEnvironment = Information om web hosting miljøet applicationen køre i.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.IsDevelopment())            // kun inkluder følgende i dev-mode
             {
-                app.UseBrowserLink();
-                app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
+                app.UseBrowserLink();                   //refreash app i flere web browsers på en gang. Bruger SignalR til at kommunikere imellem browser og VS. VS=SignalR server
+                app.UseDeveloperExceptionPage();        //Giver dev detailed error pages
+                app.UseDatabaseErrorPage();             //HTML response fra Sync + Async database relaterede exceptions fra pibelinen som EntityFrameWork mirgration kan løse. 
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Error"); // Hvis fejl hvis det ikke er i dev-enviorment 
             }
 
-            app.UseStaticFiles();
+            app.UseStaticFiles();               // Gør fil servering mulig. std path wwwroot. program.cs 
 
-            app.UseAuthentication();
+            app.UseAuthentication();            // init default auth.
 
-            app.UseMvc(routes =>
+            app.UseMvc(routes =>                //default route, home controller. Index action og optinal id?.
             {
                 routes.MapRoute(
                     name: "default",
