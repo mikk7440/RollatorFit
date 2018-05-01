@@ -15,6 +15,8 @@ namespace MVCapp4Rollator.Data
         {
         }
 
+        public DbSet<AboutModel> AboutModel { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -22,5 +24,8 @@ namespace MVCapp4Rollator.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<MVCapp4Rollator.Models.AboutModel> AboutModel { get; set; }
     }
 }
+// https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.1

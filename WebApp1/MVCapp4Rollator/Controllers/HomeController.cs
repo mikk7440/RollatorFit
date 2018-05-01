@@ -27,7 +27,7 @@ namespace MVCapp4Rollator.Controllers
 
         public IActionResult About()
         {
-        
+            
             var viewModel = new AboutModel()
             {
                 Title = "The Intellegient walker",
