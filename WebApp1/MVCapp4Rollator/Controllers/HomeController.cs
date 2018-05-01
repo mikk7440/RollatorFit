@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MVCapp4Rollator.Models;
 using Microsoft.Extensions.Configuration;
+using MVCapp4Rollator.Data;
 
 namespace MVCapp4Rollator.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ApplicationDbContext dbContext;
+
         public IConfiguration Configuration { get; set; }
 
-        public HomeController(IConfiguration config)
+        public HomeController(IConfiguration config, ApplicationDbContext dbContext)
         {
             Configuration = config;
+            this.dbContext = dbContext;
         }
 
         public IActionResult Index()
@@ -27,14 +31,7 @@ namespace MVCapp4Rollator.Controllers
 
         public IActionResult About()
         {
-            
-            var viewModel = new AboutModel()
-            {
-                Title = "The Intellegient walker",
-                Text = " Some text."
-            };
-
-            return View(viewModel);
+            return View(dbContext.AboutModel.First<AboutModel>());
         }
 
         public IActionResult Gallery()
