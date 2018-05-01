@@ -6,12 +6,6 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<h3>@Model.Title</h3>
+<h3>@Html.DisplayFor(model => model.Title)</h3>
 
-<p>@Model.Text</p>
-
-@*<p>A walker able to fit the users ever changing needs, by analysing gait.\n Inteli-walker is designed for:</p>
-<li> Help you stay as mobile as possible. </li>
-<li> Reduce falls and improve independence. </li>
-<li> Safely manouvver in and outside your home.</li>*@
-
+<p> @Html.DisplayFor(model => model.Text)</p>

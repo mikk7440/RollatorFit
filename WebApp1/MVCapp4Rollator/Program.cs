@@ -23,7 +23,7 @@ namespace MVCapp4Rollator
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<AboutContext>();
+                    var context = services.GetRequiredService<ApplicationDbContext>();
                     AboutDbInit.Initialize(context);
                 }
                 catch (Exception ex)

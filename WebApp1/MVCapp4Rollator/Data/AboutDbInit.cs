@@ -6,7 +6,7 @@ namespace MVCapp4Rollator.Data
 {
     public static class AboutDbInit
     {
-        public static void Initialize(AboutContext context)
+        public static void Initialize(ApplicationDbContext context)
         {
             context.Database.EnsureCreated();
 
