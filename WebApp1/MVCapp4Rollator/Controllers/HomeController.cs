@@ -36,9 +36,7 @@ namespace MVCapp4Rollator.Controllers
 
         public IActionResult Gallery()
         {
-            ViewData["Message"] = "Your Gallery page.";
-
-            return View();
+            return View(dbContext.PictureModel.First<PictureModel>());
         }
 
         public IActionResult Error()

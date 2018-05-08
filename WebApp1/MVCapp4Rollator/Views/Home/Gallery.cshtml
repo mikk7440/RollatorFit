@@ -1,15 +1,12 @@
-﻿@{
+﻿@model MVCapp4Rollator.Models.PictureModel
+
+@{
     ViewData["Title"] = "Gallery";
 }
 <h2>@ViewData["Title"]</h2>
 
-<address>
-    Campusvej 1<br />
-    Odense M, 5230<br />
-    <abbr title="Phone">P:</abbr>
-    + 45 20 64 88 04
-</address>
+<h3>@Html.DisplayFor(model => model.Title)</h3>
 
-<address>
-    <strong>Technical help:</strong> <a href="mailto:Support@example.com">mikkel.olsen@AbleOn.com</a><br />
-</address>
+<img src=@Html.DisplayFor(model => model.URL) >
+
+<p> @Html.DisplayFor(model => model.Text)</p>

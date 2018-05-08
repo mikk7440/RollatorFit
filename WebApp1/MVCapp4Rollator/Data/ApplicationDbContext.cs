@@ -25,6 +25,8 @@ namespace MVCapp4Rollator.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<MVCapp4Rollator.Models.PictureModel> PictureModel { get; set; }
     
     }
 }
