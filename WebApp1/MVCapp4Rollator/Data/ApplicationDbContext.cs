@@ -27,6 +27,8 @@ namespace MVCapp4Rollator.Data
         }
 
         public DbSet<MVCapp4Rollator.Models.PictureModel> PictureModel { get; set; }
+
+        public DbSet<MVCapp4Rollator.Models.NewsletterModel> NewsletterModel { get; set; }
     
     }
 }
