@@ -39,6 +39,11 @@ namespace MVCapp4Rollator.Controllers
             return View(dbContext.PictureModel.First<PictureModel>());
         }
 
+        public IActionResult Test()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
