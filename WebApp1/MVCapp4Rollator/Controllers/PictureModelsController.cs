@@ -19,6 +19,11 @@ namespace MVCapp4Rollator.Controllers
             _context = context;
         }
 
+        public async Task<IActionResult> Gallery()
+        {
+            return View(await _context.PictureModel.ToListAsync());
+        }
+
         // GET: PictureModels
         public async Task<IActionResult> Index()
         {
@@ -54,7 +59,7 @@ namespace MVCapp4Rollator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,Text,URL")] PictureModel pictureModel)
+        public async Task<IActionResult> Create([Bind("ID,Title,Text,URL,Created")] PictureModel pictureModel)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +91,7 @@ namespace MVCapp4Rollator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Text,URL")] PictureModel pictureModel)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Text,URL,Created")] PictureModel pictureModel)
         {
             if (id != pictureModel.ID)
             {

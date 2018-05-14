@@ -1,7 +1,31 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿.gallery-body {
+    padding: 24px;
 }
+
+.pictures {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 240px;
+    width: 240px;
+}
+
+.gallery-pictures-container {
+    padding: 20px;
+    background: #FFF;
+    border-radius: 2px;
+    display: inline-block;
+    height: 320px;
+    width: 280px;
+    margin: 12px;
+    position: relative;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+    body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -33,3 +57,4 @@
         display: none;
     }
 }
+

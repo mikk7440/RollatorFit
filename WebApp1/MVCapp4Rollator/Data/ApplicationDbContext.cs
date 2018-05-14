@@ -15,17 +15,15 @@ namespace MVCapp4Rollator.Data
         {
         }
 
-        public DbSet<AboutModel> AboutModel { get; set; }
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<AboutModel>().ToString();
             base.OnModelCreating(builder);
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
 
+        public DbSet<AboutModel> AboutModel { get; set; }
         public DbSet<MVCapp4Rollator.Models.PictureModel> PictureModel { get; set; }
         public DbSet<MVCapp4Rollator.Models.NewsletterModel> NewsletterModel { get; set; }
 

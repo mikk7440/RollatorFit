@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MVCapp4Rollator.Models.PictureModel>
+
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="gallery-body">
+    @foreach (var item in Model)
+    {
+        <div class="gallery-pictures-container">
+            <h4>@Html.DisplayFor(modelItem => item.Title)</h4>
+
+            <div class="pictures" style="background-image:url(@item.URL)"></div>
+        <p> @Html.DisplayFor(modelItem => item.Text)</p>
+
+        </div>
+        
+    }
+
+
+</div>

@@ -5,6 +5,15 @@
     <UserSecretsId>aspnet-MVCapp4Rollator-6CE3B8A2-F7A3-4012-8B1A-EFC3FE4E1D6B</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20180514140749_PicturerModel_DateTime_Created.cs" />
+    <Compile Remove="Data\Migrations\20180514140749_PicturerModel_DateTime_Created.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180514141536_FIXPLEASE.cs" />
+    <Compile Remove="Data\Migrations\20180514141536_FIXPLEASE.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180514142144_Initial.cs" />
+    <Compile Remove="Data\Migrations\20180514142144_Initial.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />

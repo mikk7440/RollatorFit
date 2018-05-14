@@ -34,10 +34,7 @@ namespace MVCapp4Rollator.Controllers
             return View(dbContext.AboutModel.First<AboutModel>());
         }
 
-        public IActionResult Gallery()
-        {
-            return View(dbContext.PictureModel.First<PictureModel>());
-        }
+
 
         public IActionResult Error()
         {

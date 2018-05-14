@@ -27,7 +27,7 @@ namespace MVCapp4Rollator
                 try
                 {
                     var context = services.GetRequiredService<ApplicationDbContext>();
-                    AboutDbInit.Initialize(context);
+                   
                 }
                 catch (Exception ex)
                 {
