@@ -193,18 +193,6 @@ namespace MVCapp4Rollator.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("MVCapp4Rollator.Models.NewsletterModel", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Email");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("NewsletterModel");
-                });
-
             modelBuilder.Entity("MVCapp4Rollator.Models.PictureModel", b =>
                 {
                     b.Property<int>("ID")

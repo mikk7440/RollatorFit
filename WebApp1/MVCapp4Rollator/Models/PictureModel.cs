@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc; //Maybe remove
+using Microsoft.AspNetCore.Mvc;
 
 namespace MVCapp4Rollator.Models
 {
