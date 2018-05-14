@@ -7,19 +7,20 @@
 
 
 <h2>@ViewData["Title"]</h2>
+<a asp-area="" asp-controller="PictureModels" asp-action="Upload"><input type="submit" value="Upload pic" class="btn btn-default" /></a>
 
 <div class="gallery-body">
     @foreach (var item in Model)
     {
         <div class="gallery-pictures-container">
-            <h4>@Html.DisplayFor(modelItem => item.Title)</h4>
 
-            <div class="pictures" style="background-image:url(@item.URL)"></div>
-        <p> @Html.DisplayFor(modelItem => item.Text)</p>
+            <h4>@Html.DisplayFor(modelItem => item.Title)</h4>
+            <a asp-controller="PictureModels" asp-action="Detail" asp-route-id="@item.ID">
+                <div class="pictures" style="background-image:url(@item.URL)"></div>
+            </a>
+            <p> @Html.DisplayFor(modelItem => item.Text)</p>
 
         </div>
-        
     }
-
 
 </div>

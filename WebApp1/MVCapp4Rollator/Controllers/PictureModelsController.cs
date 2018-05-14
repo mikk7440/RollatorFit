@@ -24,6 +24,23 @@ namespace MVCapp4Rollator.Controllers
             return View(await _context.PictureModel.ToListAsync());
         }
 
+        public async Task<IActionResult> Detail(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var pictureModel = await _context.PictureModel
+                .SingleOrDefaultAsync(m => m.ID == id);
+            if (pictureModel == null)
+            {
+                return NotFound();
+            }
+
+            return View(pictureModel);
+        }
+
         // GET: PictureModels
         public async Task<IActionResult> Index()
         {
