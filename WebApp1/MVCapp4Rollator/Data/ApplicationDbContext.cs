@@ -27,7 +27,9 @@ namespace MVCapp4Rollator.Data
         }
 
         public DbSet<MVCapp4Rollator.Models.PictureModel> PictureModel { get; set; }
-    
+        public DbSet<MVCapp4Rollator.Models.NewsletterModel> NewsletterModel { get; set; }
+
+
     }
 }
 // https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.1
