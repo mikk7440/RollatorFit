@@ -9,11 +9,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using MVCapp4Rollator.Data;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace MVCapp4Rollator
 {
     public class Program
     {
+
         public static void Main(string[] args)
         {
             var host = BuildWebHost(args);
@@ -32,6 +35,7 @@ namespace MVCapp4Rollator
                     logger.LogError(ex, "An error occurred while seeding the database.");
                 }
             }
+
             host.Run();
         }
 
@@ -39,5 +43,6 @@ namespace MVCapp4Rollator
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .Build();
+
     }
 }
