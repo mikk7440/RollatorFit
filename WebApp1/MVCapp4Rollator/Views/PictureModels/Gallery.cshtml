@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<MVCapp4Rollator.Models.PictureModel>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 @{
     ViewData["Title"] = "Gallery";
@@ -7,7 +10,12 @@
 
 
 <h2>@ViewData["Title"]</h2>
-<a asp-area="" asp-controller="PictureModels" asp-action="Upload"><input type="submit" value="Upload pic" class="btn btn-default" /></a>
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <a asp-area="" asp-controller="PictureModels" asp-action="Upload"><input type="submit" value="Upload pic" class="btn btn-default" /></a>
+}
 
 <div class="gallery-body">
     @foreach (var item in Model)

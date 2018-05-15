@@ -1,17 +1,21 @@
-﻿@model MVCapp4Rollator.Models.PictureModel
+﻿
+@model MVCapp4Rollator.Models.PictureModel
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h2>@Html.DisplayFor(model => model.Title) </h2>
+    <h2>@Html.DisplayFor(model => model.Title) </h2>
 
-<div class="row" >   
-    <div class="d-pictures" style="background-image:url(@Model.URL)"></div>
-    <p>  @Html.DisplayFor(model => model.Text) </p>
-    <p>Created: @Model.Created.ToString()</p>
-</div>
+    <div class="row">
+        <div class="d-pictures" style="background-image:url(@Model.URL)"></div>
+        <p>  @Html.DisplayFor(model => model.Text) </p>
+        <p>Created: @Model.Created.ToString()</p>
+    </div>
 
-<div>|
-    <a class="btn btn-default" asp-action="Gallery"> Gallery </a>
-</div>
+    <div>
+        |
+        <a class="btn btn-default" asp-action="Gallery"> Gallery </a>
+    </div>
+
+
