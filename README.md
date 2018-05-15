@@ -1,4 +1,4 @@
-# Mandatory Assignmet
+# Mandatory Assignment
 XI-IT1-Spring 2018 (as electives)
 
 About page - with possibility to change info.
