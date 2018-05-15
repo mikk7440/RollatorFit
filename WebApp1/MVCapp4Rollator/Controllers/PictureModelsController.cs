@@ -1,27 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using MVCapp4Rollator.Data;
 using MVCapp4Rollator.Models;
+using MVCapp4Rollator.Services;
 
 namespace MVCapp4Rollator.Controllers
 {
     public class PictureModelsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private IConfiguration _config;
+        private string AzureConnectionString { get;}
+        //private readonly PictureService _pictureService;
 
-        public PictureModelsController(ApplicationDbContext context)
+        public PictureModelsController( IConfiguration config, ApplicationDbContext context) // public PictureModelsController(PictureService imageService, IConfiguration config, ApplicationDbContext context)
         {
+            //_pictureService = imageService;
+            _config = config;
+            AzureConnectionString = _config["AzureConnectionString"];
             _context = context;
         }
 
         public async Task<IActionResult> Gallery()
         {
             return View(await _context.PictureModel.ToListAsync());
+        }
+
+        public IActionResult Upload() //Make a empty new model so user can post new model.
+        {
+            var model = new UploadPic();
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadNew(IFormFile file, string title, string  text)
+        {
+            //var container = _pictureService.GetBlobContainer(AzureConnectionString,"blobContainerName");
+            //var content = ContentDispositionHeaderValue.Parse(file.ContentDisposition);
+            //var fileName = content.FileName.Trim('"');
+
+            ////GEt Blob Block refrence
+            //var blockBlob = container.GetBlockBlobReference(fileName);
+            //await blockBlob.UploadFromStreamAsync(file.OpenReadStream());
+            //await _pictureService.SetImage(title, text, blockBlob.Uri);
+
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Detail(int? id)

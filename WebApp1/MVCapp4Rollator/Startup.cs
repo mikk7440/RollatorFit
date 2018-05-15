@@ -35,7 +35,7 @@ namespace MVCapp4Rollator
                 .AddDefaultTokenProviders();
 
             services.AddTransient<IEmailSender, EmailSender>();
-
+            services.AddScoped<IImage, PictureService>();
             services.AddMvc();                                       // tilføj Model View Controller
         }
 
@@ -66,5 +66,6 @@ namespace MVCapp4Rollator
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+        
     }
 }
