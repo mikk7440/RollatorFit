@@ -1,13 +1,10 @@
 ﻿@model MVCapp4Rollator.Models.NewsletterModel
-@using Microsoft.AspNetCore.Identity
-@inject SignInManager<ApplicationUser> SignInManager
-@inject UserManager<ApplicationUser> UserManager
+
 
 @{
     ViewData["Title"] = "Create";
 }
-@if (SignInManager.IsSignedIn(User))
-{
+
     <h2>Create</h2>
 
     <h4>NewsletterModel</h4>
@@ -31,8 +28,7 @@
     <div>
         <a asp-action="Index">Back to List</a>
     </div>
-}
-<h4> Not Authorized! </h4>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
